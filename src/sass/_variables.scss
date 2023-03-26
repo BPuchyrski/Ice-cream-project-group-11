@@ -1,0 +1,84 @@
+/*
+MAIN SETTINGS OF PROJECT
+*/
+// TEKST: t_* //
+//size
+$t_primarySize: 16px;
+$t_secondSize: 14px;
+//font
+$t_fontFamily: 'DM Sans', sans-serif;
+$t_secondFontFamily: 'Titan One', cursive;
+// TEKST & KOLOR mix // EN: TEXT & COLOR mix: t-c_*
+
+// FONTS
+@mixin header-font {
+  color: getColor('c_darkPink');
+  font-family: 'Titan One', cursive;
+  font-size: 34px;
+  line-height: 1.15;
+  letter-spacing: 0.04rem;
+  text-transform: uppercase;
+  @media screen and (min-width: 768px) {
+    font-size: 48px;
+    letter-spacing: 0.06rem;
+  }
+  @media screen and (min-width: 1280px) {
+    font-size: 58px;
+    line-height: 1.14;
+  }
+}
+
+@mixin header-support-font {
+  color: getColor('c_lightPink');
+  font-family: 'Titan One', cursive;
+  font-size: 18px;
+  line-height: 1.17;
+  text-transform: uppercase;
+  @media screen and (min-width: 768px) {
+    font-size: 26px;
+    letter-spacing: 0.04rem;
+    line-height: 1.15;
+  }
+  @media screen and (min-width: 1280px) {
+    font-size: 30px;
+    line-height: 1.13;
+  }
+}
+
+@mixin common-font {
+  color: getColor('c_black');
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  @media screen and (min-width: 768px) {
+    font-size: $t_secondSize;
+  }
+  @media screen and (min-width: 1280px) {
+    font-size: $t_primarySize;
+  }
+}
+$color: (
+  't-c_primaryColor': 'c_black',
+  't-c_secondColor': 'c_darkPink',
+  't-c_thirdColor': 'c_lightPink',
+  't-c_fourthColor': #907e82,
+  // [ BASIC COLORS ]
+  'c_black': #000,
+  'c_white': #fff,
+  //FONTS / BACKGROUNDS
+  'c_darkPink': #d41443,
+  'c_darkPink2': #d41342,
+  'c_lightPink': #ffa5ba,
+  'c_lightPink1': #ffb8ca,
+  'c_lightPink2': #e17992,
+  'c_lightPink3': #e18298,
+  //CARD PRODUCTS
+  'c_ultraLightPink': #fff5f6,
+  'c_lightGreen': #c2e297,
+  'c_lightBrown': #f0d1a5,
+  //BUTTON HOVER
+  'c_lightGray': #ecebeb,
+);
+
+@function getColor($key) {
+  @return map-get($color, $key);
+}

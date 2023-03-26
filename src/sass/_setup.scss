@@ -1,0 +1,12 @@
+@import './variables';
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  //default font size
+  font-size: $t_primarySize;
+  //font color
+  color: getColor('c_black');
+}
